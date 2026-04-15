@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="980.0" style="-fx-background-color: #f8f4f1;"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.logbooksystem.controller.LecturerDashboardController">
+
+    <children>
+
+        <!-- TOP HEADER -->
+        <Pane layoutX="0.0" layoutY="0.0" prefHeight="70.0" prefWidth="980.0" style="-fx-background-color: #6f4e37;">
+            <children>
+                <Label layoutX="25.0" layoutY="18.0" text="Internship Logbook Management System" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <Button fx:id="btnLogout" layoutX="875.0" layoutY="18.0" mnemonicParsing="false"
+                        onAction="#handleLogout"
+                        prefHeight="32.0" prefWidth="80.0"
+                        style="-fx-background-color: white; -fx-text-fill: #6f4e37; -fx-background-radius: 8;"
+                        text="Logout" />
+            </children>
+        </Pane>
+
+        <!-- MENU BAR -->
+        <MenuBar layoutX="0.0" layoutY="70.0" prefHeight="30.0" prefWidth="980.0" style="-fx-background-color: #e8d9cc;">
+            <menus>
+                <Menu text="Home">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Dashboard" onAction="#goHomeDashboard"/>
+                    </items>
+                </Menu>
+                <Menu text="Profile">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Lecturer Detail" onAction="#openLecturerProfile"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+        <!-- TITLE -->
+        <Label layoutX="35.0" layoutY="115.0" text="Lecturer Dashboard" textFill="#4a3426">
+            <font>
+                <Font name="Arial Bold" size="28.0" />
+            </font>
+        </Label>
+
+        <Label fx:id="lblWelcomeLecturer" layoutX="38.0" layoutY="155.0" text="Welcome, Lecturer" textFill="#7a5c49">
+            <font>
+                <Font name="Arial" size="16.0" />
+            </font>
+        </Label>
+
+        <!-- STUDENT LIST PANEL -->
+        <Pane layoutX="31.0" layoutY="200.0" prefHeight="390.0" prefWidth="918.0"
+              style="-fx-background-color: white; -fx-background-radius: 12; -fx-border-color: #d8c2b0; -fx-border-radius: 12;">
+            <children>
+                <Label layoutX="25.0" layoutY="18.0" text="Students Under Supervision" textFill="#4a3426">
+                    <font>
+                        <Font name="Arial Bold" size="20.0" />
+                    </font>
+                </Label>
+
+                <TableView fx:id="tableStudents" layoutX="25.0" layoutY="55.0" prefHeight="260.0" prefWidth="865.0">
+                    <columns>
+                        <TableColumn fx:id="colStudentId" prefWidth="180.0" text="Student ID" />
+                        <TableColumn fx:id="colStudentName" prefWidth="300.0" text="Student Name" />
+                        <TableColumn fx:id="colStudentEmail" prefWidth="385.0" text="Student Email" />
+                    </columns>
+                </TableView>
+
+                <Button fx:id="btnRefresh" layoutX="25.0" layoutY="335.0" mnemonicParsing="false"
+                        onAction="#handleRefresh"
+                        prefHeight="32.0" prefWidth="100.0"
+                        style="-fx-background-color: #a47148; -fx-text-fill: white; -fx-background-radius: 8;"
+                        text="Refresh" />
+
+                <Button fx:id="btnViewLogbook" layoutX="785.0" layoutY="335.0" mnemonicParsing="false"
+                        onAction="#handleViewLogbook"
+                        prefHeight="32.0" prefWidth="105.0"
+                        style="-fx-background-color: #8b5e3c; -fx-text-fill: white; -fx-background-radius: 8;"
+                        text="View Logbook" />
+
+                <Label fx:id="lblMessage" layoutX="140.0" layoutY="342.0" textFill="#b85c38" />
+            </children>
+        </Pane>
+
+    </children>
+</AnchorPane>

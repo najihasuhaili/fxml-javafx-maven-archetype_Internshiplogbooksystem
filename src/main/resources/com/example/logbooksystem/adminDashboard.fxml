@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="980.0" style="-fx-background-color: #f8f4f1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.logbooksystem.controller.AdminDashboardController">
+
+    <children>
+
+        <!-- HEADER -->
+        <Pane prefHeight="70.0" prefWidth="980.0" style="-fx-background-color: #6f4e37;">
+            <children>
+                <Label layoutX="25.0" layoutY="18.0" text="Internship Logbook Management System" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <Button layoutX="875.0" layoutY="18.0" onAction="#handleLogout" style="-fx-background-color: white; -fx-text-fill: #6f4e37; -fx-background-radius: 8;" text="Logout" />
+            </children>
+        </Pane>
+
+        <!-- MENUBAR -->
+        <MenuBar layoutY="70.0" prefHeight="26.0" prefWidth="980.0" style="-fx-background-color: #e8d9cc;">
+            <menus>
+                <Menu text="Home">
+                    <items>
+                        <MenuItem onAction="#showHome" text="Dashboard" />
+                    </items>
+                </Menu>
+
+                <Menu text="Student">
+                    <items>
+                        <MenuItem onAction="#showStudent" text="Manage Student" />
+                    </items>
+                </Menu>
+
+                <Menu text="Lecturer">
+                    <items>
+                        <MenuItem onAction="#showLecturer" text="Manage Lecturer" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+        <!-- PAGE TITLE -->
+        <Label fx:id="lblTitle" layoutX="41.0" layoutY="108.0" text="Admin Dashboard" textFill="#4a3426">
+            <font>
+                <Font name="Arial Bold" size="28.0" />
+            </font>
+        </Label>
+
+        <!-- ================= HOME PANE ================= -->
+        <Pane fx:id="paneHome" layoutX="30.0" layoutY="140.0" prefHeight="487.0" prefWidth="920.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-border-color: #d8c2b0; -fx-border-radius: 12;">
+            <children>
+
+                <Label layoutX="25.0" layoutY="15.0" text="Student Overview" textFill="#4a3426">
+                    <font>
+                        <Font name="Arial Bold" size="20.0" />
+                    </font>
+                </Label>
+
+                <TextField fx:id="txtSearchHome" layoutX="25.0" layoutY="55.0" prefWidth="250.0" promptText="Search student / lecturer..." />
+                <Button layoutX="285.0" layoutY="55.0" onAction="#searchHome" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Search" />
+                <Button layoutX="350.0" layoutY="55.0" onAction="#loadStudentTable" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Refresh" />
+
+                <TableView fx:id="tableHome" layoutX="25.0" layoutY="105.0" prefHeight="350.0" prefWidth="870.0">
+                    <columns>
+                        <TableColumn fx:id="colHid" prefWidth="120.0" text="Student ID" />
+                        <TableColumn fx:id="colHname" prefWidth="220.0" text="Student Name" />
+                        <TableColumn fx:id="colHemail" prefWidth="200.0" text="Email" />
+                        <TableColumn fx:id="colHsession" prefWidth="120.0" text="Session" />
+                        <TableColumn fx:id="colHlecturer" prefWidth="200.0" text="Assigned Lecturer" />
+                    </columns>
+                </TableView>
+
+            </children>
+        </Pane>
+
+        <!-- ================= STUDENT PANE ================= -->
+        <Pane fx:id="paneStudent" layoutX="30.0" layoutY="140.0" prefHeight="487.0" prefWidth="920.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-border-color: #d8c2b0; -fx-border-radius: 12;" visible="false">
+            <children>
+
+                <Label layoutX="25.0" layoutY="15.0" text="Manage Students" textFill="#4a3426">
+                    <font>
+                        <Font name="Arial Bold" size="20.0" />
+                    </font>
+                </Label>
+
+                <GridPane hgap="10" layoutX="25.0" layoutY="50.0" vgap="10">
+
+                    <Label text="Student ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtSid" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="txtSname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="txtSemail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label text="Session:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="txtSsession" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label text="Lecturer:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <ComboBox fx:id="cbStudentLecturer" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+
+                <Button layoutX="450.0" layoutY="120.0" onAction="#addStudent" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Add" />
+                <Button layoutX="500.0" layoutY="120.0" onAction="#updateStudent" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Update" />
+                <Button layoutX="570.0" layoutY="120.0" onAction="#deleteStudent" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Delete" />
+                <Button layoutX="640.0" layoutY="120.0" onAction="#resetStudent" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Reset" />
+
+                <TextField fx:id="txtSearchStudent" layoutX="450.0" layoutY="180.0" prefWidth="220.0" promptText="Search student..." />
+                <Button layoutX="680.0" layoutY="180.0" onAction="#searchStudent" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Search" />
+
+                <TableView fx:id="tableStudent" layoutX="25.0" layoutY="230.0" prefHeight="230.0" prefWidth="870.0">
+                    <columns>
+                        <TableColumn fx:id="colSid" prefWidth="120.0" text="Student ID" />
+                        <TableColumn fx:id="colSname" prefWidth="220.0" text="Name" />
+                        <TableColumn fx:id="colSemail" prefWidth="200.0" text="Email" />
+                        <TableColumn fx:id="colSsession" prefWidth="120.0" text="Session" />
+                        <TableColumn fx:id="colSlecturer" prefWidth="200.0" text="Lecturer" />
+                    </columns>
+                </TableView>
+
+            </children>
+        </Pane>
+
+        <!-- ================= LECTURER PANE ================= -->
+        <Pane fx:id="paneLecturer" layoutX="30.0" layoutY="140.0" prefHeight="487.0" prefWidth="920.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-border-color: #d8c2b0; -fx-border-radius: 12;" visible="false">
+            <children>
+
+                <Label layoutX="25.0" layoutY="15.0" text="Manage Lecturers" textFill="#4a3426">
+                    <font>
+                        <Font name="Arial Bold" size="20.0" />
+                    </font>
+                </Label>
+
+                <GridPane hgap="10" layoutX="25.0" layoutY="50.0" vgap="10">
+
+                    <Label text="Lecturer ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtLid" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="txtLname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="txtLemail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+
+                <Button layoutX="450.0" layoutY="100.0" onAction="#addLecturer" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Add" />
+                <Button layoutX="500.0" layoutY="100.0" onAction="#updateLecturer" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Update" />
+                <Button layoutX="570.0" layoutY="100.0" onAction="#deleteLecturer" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Delete" />
+                <Button layoutX="640.0" layoutY="100.0" onAction="#resetLecturer" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Reset" />
+
+                <TextField fx:id="txtSearchLecturer" layoutX="450.0" layoutY="160.0" prefWidth="220.0" promptText="Search lecturer..." />
+                <Button layoutX="680.0" layoutY="160.0" onAction="#searchLecturer" style="-fx-background-color: #6f4e37; -fx-text-fill: white;" text="Search" />
+
+                <TableView fx:id="tableLecturer" layoutX="25.0" layoutY="210.0" prefHeight="250.0" prefWidth="870.0">
+                    <columns>
+                        <TableColumn fx:id="colLid" prefWidth="180.0" text="Lecturer ID" />
+                        <TableColumn fx:id="colLname" prefWidth="300.0" text="Name" />
+                        <TableColumn fx:id="colLemail" prefWidth="300.0" text="Email" />
+                    </columns>
+                </TableView>
+
+            </children>
+        </Pane>
+
+    </children>
+</AnchorPane>

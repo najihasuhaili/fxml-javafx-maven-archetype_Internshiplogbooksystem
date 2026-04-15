@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #f8f4f1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.logbooksystem.controller.StudentProfileController">
+
+    <children>
+
+        <!-- TOP BAR -->
+        <Pane layoutX="0.0" layoutY="0.0" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: #6f4e37;">
+            <children>
+                <Label layoutX="25.0" layoutY="18.0" text="Student Profile" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <Button layoutX="790.0" layoutY="18.0" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="32.0" prefWidth="80.0" style="-fx-background-color: #ffffff; -fx-text-fill: #6f4e37; -fx-background-radius: 8;" text="Back" />
+            </children>
+        </Pane>
+
+        <!-- TITLE -->
+        <Label fx:id="lblTitle" layoutX="40.0" layoutY="100.0" text="Student Profile" textFill="#4a3426">
+            <font>
+                <Font name="Arial Bold" size="28.0" />
+            </font>
+        </Label>
+
+        <!-- PROFILE DETAILS -->
+        <Label layoutX="70.0" layoutY="170.0" text="Student ID :" textFill="#4a3426">
+            <font><Font name="Arial Bold" size="18.0" /></font>
+        </Label>
+        <Label fx:id="lblStudentId" layoutX="250.0" layoutY="170.0" text="-" textFill="#7a5c49">
+            <font><Font name="Arial" size="18.0" /></font>
+        </Label>
+
+        <Label layoutX="70.0" layoutY="220.0" text="Student Name :" textFill="#4a3426">
+            <font><Font name="Arial Bold" size="18.0" /></font>
+        </Label>
+        <Label fx:id="lblStudentName" layoutX="250.0" layoutY="220.0" text="-" textFill="#7a5c49">
+            <font><Font name="Arial" size="18.0" /></font>
+        </Label>
+
+        <Label layoutX="70.0" layoutY="270.0" text="Lecturer Name :" textFill="#4a3426">
+            <font><Font name="Arial Bold" size="18.0" /></font>
+        </Label>
+        <Label fx:id="lblLecturerName" layoutX="250.0" layoutY="270.0" text="-" textFill="#7a5c49">
+            <font><Font name="Arial" size="18.0" /></font>
+        </Label>
+
+        <Label layoutX="70.0" layoutY="320.0" text="Student Email :" textFill="#4a3426">
+            <font><Font name="Arial Bold" size="18.0" /></font>
+        </Label>
+        <Label fx:id="lblStudentEmail" layoutX="250.0" layoutY="320.0" text="-" textFill="#7a5c49">
+            <font><Font name="Arial" size="18.0" /></font>
+        </Label>
+
+        <Label layoutX="70.0" layoutY="370.0" text="Session :" textFill="#4a3426">
+            <font><Font name="Arial Bold" size="18.0" /></font>
+        </Label>
+        <Label fx:id="lblSession" layoutX="250.0" layoutY="370.0" text="-" textFill="#7a5c49">
+            <font><Font name="Arial" size="18.0" /></font>
+        </Label>
+
+        <Label layoutX="70.0" layoutY="420.0" text="Current Password :" textFill="#4a3426">
+            <font><Font name="Arial Bold" size="18.0" /></font>
+        </Label>
+        <Label fx:id="lblCurrentPassword" layoutX="250.0" layoutY="420.0" text="-" textFill="#7a5c49">
+            <font><Font name="Arial" size="18.0" /></font>
+        </Label>
+
+        <!-- CHANGE PASSWORD SECTION -->
+        <Label layoutX="70.0" layoutY="500.0" text="New Password :" textFill="#4a3426">
+            <font><Font name="Arial Bold" size="18.0" /></font>
+        </Label>
+
+        <PasswordField fx:id="txtNewPassword" layoutX="250.0" layoutY="495.0" prefHeight="35.0" prefWidth="220.0" promptText="Enter new password" style="-fx-background-radius: 8; -fx-border-radius: 8;">
+         <tooltip>
+            <Tooltip text="enter new password" />
+         </tooltip></PasswordField>
+
+        <Button layoutX="490.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleChangePassword" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #8b5e3c; -fx-text-fill: white; -fx-background-radius: 8;" text="Change Password" />
+
+    </children>
+</AnchorPane>

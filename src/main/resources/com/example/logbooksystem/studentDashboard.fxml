@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #f8f4f1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.logbooksystem.controller.StudentDashboardController">
+
+    <children>
+
+        <!-- TOP BAR -->
+        <Pane layoutX="0.0" layoutY="0.0" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: #6f4e37;">
+            <children>
+                <Label layoutX="25.0" layoutY="18.0" text="Internship Logbook Management System" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <Button fx:id="btnLogout" layoutX="790.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="32.0" prefWidth="80.0" style="-fx-background-color: #ffffff; -fx-text-fill: #6f4e37; -fx-background-radius: 8;" text="Logout" />
+            </children>
+        </Pane>
+
+        <!-- MENU BAR -->
+        <MenuBar layoutX="0.0" layoutY="70.0" prefHeight="30.0" prefWidth="900.0" style="-fx-background-color: #e8d9cc;">
+            <menus>
+                <Menu text="Home">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Dashboard" />
+                    </items>
+                </Menu>
+                <Menu text="Profile">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Student Detail" onAction="#openStudentProfile"/>
+                    </items>
+                </Menu>
+                <Menu text="Logbook">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek1" text="Week 1" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek2" text="Week 2" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek3" text="Week 3" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek4" text="Week 4" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek5" text="Week 5" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek6" text="Week 6" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek7" text="Week 7" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek8" text="Week 8" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek9" text="Week 1" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek10" text="Week 10" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek11" text="Week 11" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek12" text="Week 12" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek13" text="Week 13" />
+                        <MenuItem mnemonicParsing="false" onAction="#openWeek14" text="Week 14" />
+                    </items>
+                </Menu>               
+            </menus>
+        </MenuBar>
+
+        <!-- WELCOME SECTION -->
+        <Label layoutX="35.0" layoutY="125.0" text="Student Dashboard" textFill="#4a3426">
+            <font>
+                <Font name="Arial Bold" size="28.0" />
+            </font>
+        </Label>
+
+        <Label fx:id="lblWelcome" layoutX="37.0" layoutY="165.0" text="Welcome, Student" textFill="#7a5c49">
+            <font>
+                <Font name="Arial" size="15.0" />
+            </font>
+        </Label>
+
+        <!-- WEEKLY FOLDER SECTION -->
+        <Label layoutX="35.0" layoutY="210.0" text="Weekly Logbook Folder" textFill="#4a3426">
+            <font>
+                <Font name="Arial Bold" size="22.0" />
+            </font>
+        </Label>
+
+        <!-- ROW 1 -->
+        <HBox layoutX="28.0" layoutY="254.0" prefHeight="80.0" prefWidth="830.0" spacing="15.0">
+            <children>
+                <Button onAction="#openWeek1" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #8b5e3c; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 1" />
+                <Button onAction="#openWeek2" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #8b5e3c; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 2" />
+                <Button onAction="#openWeek3" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #8b5e3c; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 3" />
+                <Button onAction="#openWeek4" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #8b5e3c; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 4" />
+                <Button onAction="#openWeek5" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #8b5e3c; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 5" />
+                <Button onAction="#openWeek6" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #8b5e3c; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 6" />
+                <Button onAction="#openWeek7" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #8b5e3c; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 7" />
+            </children>
+        </HBox>
+
+        <!-- ROW 2 -->
+        <HBox layoutX="28.0" layoutY="353.0" prefHeight="80.0" prefWidth="830.0" spacing="15.0">
+            <children>
+                <Button onAction="#openWeek8" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #a47148; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 8" />
+                <Button onAction="#openWeek9" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #a47148; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 9" />
+                <Button onAction="#openWeek10" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #a47148; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 10" />
+                <Button onAction="#openWeek11" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #a47148; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 11" />
+                <Button onAction="#openWeek12" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #a47148; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 12" />
+                <Button onAction="#openWeek13" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #a47148; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 13" />
+                <Button onAction="#openWeek14" prefHeight="70.0" prefWidth="105.0" style="-fx-background-color: #a47148; -fx-text-fill: white; -fx-background-radius: 10;" text="Week 14" />
+            </children>
+        </HBox>
+
+        <!-- FOOTER -->
+        <Label fx:id="lblAnnouncement" layoutX="35.0" layoutY="545.0" text="Select the week folder to manage your internship logbook entry." textFill="#5c4638">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font>
+        </Label>
+
+    </children>
+</AnchorPane>
